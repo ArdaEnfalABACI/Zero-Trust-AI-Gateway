@@ -123,10 +123,25 @@ cmake --build . --config Release
 
 ### 3. Running the Integrated System
 
-1. Copy the compiled backend executable (`main.exe`) and its `_internal` folder from `dist/main/` into a release directory structure alongside the built C++ frontend (`ZeroTrustAI.exe`).
+After building both components, manually structure your release directory as follows:
 
-2. Run `ZeroTrustAI.exe` to spin up the secure gateway launcher and the Python backend simultaneously.
+1. Create a folder named `ZeroTrust_Release` (or any release folder you prefer).
 
+2. Copy the built C++ frontend (`ZeroTrustAI.exe`) directly into this root release folder.
+
+3. Inside this release folder, create a subfolder named `backend_engine`.
+
+4. Copy the compiled backend executable (`main.exe`) and its `_internal` folder from `dist/main/` into the `backend_engine` subfolder.
+
+Your final directory structure must look like this:
+
+ZeroTrust_Release/
+├── ZeroTrustAI.exe
+└── backend_engine/
+    ├── main.exe
+    └── _internal/
+
+5. Run `ZeroTrustAI.exe` to spin up the secure gateway launcher and the Python backend simultaneously.
 
 ---
 
