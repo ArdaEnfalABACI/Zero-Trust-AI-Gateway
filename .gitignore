@@ -1,0 +1,22 @@
+# Python & PyInstaller
+__pycache__/
+venv/
+env/
+.env
+dist/
+build/
+*.spec
+server.key
+server.crt
+
+# C++ / Qt & CMake
+desktop_client/build/
+desktop_client/CMakeCache.txt
+desktop_client/CMakeFiles/
+*.user
+
+# Database, Executables & Releases
+*.sqlite
+ZeroTrust_Release/
+Output/
+*.exe
