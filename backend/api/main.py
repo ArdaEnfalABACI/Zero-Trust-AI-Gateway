@@ -190,12 +190,12 @@ if __name__ == "__main__":
     import os
 
     if not os.path.exists("server.key") or not os.path.exists("server.crt"):
-        print("[SYSTEM] 🔐 Generating unique hardware-bound SSL certificates...")
+        print("[SYSTEM]  Generating unique hardware-bound SSL certificates...")
         ca = trustme.CA()
         server_cert = ca.issue_cert("127.0.0.1", "localhost")
         server_cert.private_key_pem.write_to_path("server.key")
         server_cert.cert_chain_pems[0].write_to_path("server.crt")
         print("[SYSTEM] ✅ Unique SSL certificates generated successfully.")
 
-    print("[SYSTEM] 🚀 Starting Universal Zero Trust Gateway...")
+    print("[SYSTEM]  Starting Universal Zero Trust Gateway...")
     uvicorn.run(app, host="127.0.0.1", port=8000, ssl_keyfile="server.key", ssl_certfile="server.crt")
