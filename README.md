@@ -47,20 +47,24 @@ Ollama (running locally for the local routing engine)
 Open a terminal in the root project directory and set up the Python environment:
 
 # Create and activate virtual environment
-python -m venv venv
-venv\Scripts\activate
+
+` python -m venv venv `
+
+` venv\Scripts\activate `
 
 # Install required dependencies
-pip install -r requirements.txt
+
+` pip install -r requirements.txt `
 
 # Package the backend using PyInstaller and the provided spec file
-pyinstaller main.spec
+
+` pyinstaller main.spec `
 
 
 2. Frontend Setup (C++ / Qt & CMake)
 
 Navigate to the client directory and compile the C++ application:
-``bash``
+
 ` cd desktop_client `
 
 ` mkdir build `
