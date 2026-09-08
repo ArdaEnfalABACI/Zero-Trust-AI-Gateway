@@ -60,7 +60,7 @@ pyinstaller main.spec
 2. Frontend Setup (C++ / Qt & CMake)
 
 Navigate to the client directory and compile the C++ application:
-
+``bash``
 ` cd desktop_client `
 ` mkdir build `
 ` cd build `
