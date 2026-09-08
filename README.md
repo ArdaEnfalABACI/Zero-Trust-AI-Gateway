@@ -1,7 +1,7 @@
  # 🛡️ Universal Zero Trust AI Gateway
 
 
-*A secure, fail-closed AI proxy router built with a modern C++ (Qt) frontend and a powerful Python (FastAPI) backend.*
+*A secure AI proxy router built with a modern C++ (Qt) frontend and a powerful Python (FastAPI) backend.*
 
 
 []()
