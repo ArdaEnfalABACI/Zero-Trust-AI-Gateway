@@ -136,13 +136,9 @@ After building both components, manually structure your release directory as fol
 Your final directory structure must look like this:
 
 ZeroTrust_Release/
-
 ├── ZeroTrustAI.exe
-
 └── backend_engine/
-
     ├── main.exe
-    
     └── _internal/
 
 5. Run `ZeroTrustAI.exe` to spin up the secure gateway launcher and the Python backend simultaneously.
