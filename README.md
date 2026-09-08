@@ -61,11 +61,11 @@ pyinstaller main.spec
 
 Navigate to the client directory and compile the C++ application:
 
-`cd desktop_client
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release `
+` cd desktop_client `
+` mkdir build `
+` cd build `
+` cmake .. `
+` cmake --build . --config Release `
 
 
 3. Running the Integrated System
