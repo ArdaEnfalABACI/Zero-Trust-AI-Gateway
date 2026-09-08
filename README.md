@@ -62,9 +62,13 @@ pyinstaller main.spec
 Navigate to the client directory and compile the C++ application:
 ``bash``
 ` cd desktop_client `
+
 ` mkdir build `
+
 ` cd build `
+
 ` cmake .. `
+
 ` cmake --build . --config Release `
 
 
