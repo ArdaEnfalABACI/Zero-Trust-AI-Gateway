@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+trustme
+cryptography
+magika
+litellm
+tiktoken
+spacy
+transformers
+presidio-analyzer
+presidio-anonymizer
