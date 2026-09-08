@@ -1,4 +1,4 @@
- # 🛡️ Universal Zero Trust AI Gateway
+ #  Universal Zero Trust AI Gateway
 
 
 *A secure AI proxy router built with a modern C++ (Qt) frontend and a powerful Python (FastAPI) backend.*
@@ -18,7 +18,7 @@
 ---
 
 
-## ✨ System Features
+##  System Features
 
 
 - **Zero Trust Architecture:** Operates on a strict **"Fail-Closed"** security model. If any security check or local model verification fails, data is strictly prevented from leaving the local device.
@@ -37,7 +37,7 @@
 ---
 
 
-## 🚀 For Users: Easy Installation
+##  For Users: Easy Installation
 
 
 If you want to use the application without dealing with source code or compilers:
@@ -60,7 +60,7 @@ If you want to use the application without dealing with source code or compilers
 ---
 
 
-## 💻 For Developers: Running & Building from Source
+##  For Developers: Running & Building from Source
 
 
 If you want to inspect the source code, make modifications, or build the application yourself, follow the structured steps below.
