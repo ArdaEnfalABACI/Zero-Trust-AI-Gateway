@@ -54,6 +54,8 @@ If you want to use the application without dealing with source code or compilers
 
 > [!NOTE]
 
+> **Interactive Terminal During Setup:** During installation, an interactive terminal window might appear offering various AI agents (like Hermes, Cline, Qwen Code, etc.). You can press 'Enter' to install a model if you wish, or simply **close this window** to proceed. Zero Trust AI Gateway will automatically manage and download its required local models in the background.
+
 > Your local session history and API keys are stored securely inside your personal `AppData` directory, ensuring they persist safely across updates.
 
 
