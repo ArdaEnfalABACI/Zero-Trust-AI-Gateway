@@ -39,13 +39,15 @@
 
 ### Prerequisites
 
-- **Python 3.10+**
+* **Python 3.10+** ➔ [Download Official](https://www.python.org/downloads/) | Windows: `winget install Python.Python.3.11`
 
-- **C++ Compiler** (MSVC / MinGW) & **CMake**
+* **C++ Compiler (MSVC / MinGW) & CMake** ➔ [MSVC Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) | [CMake](https://cmake.org/download/)
 
-- **Qt 6.x SDK**
+* **Qt 6.x SDK** ➔ [Qt Online Installer](https://www.qt.io/download-open-source) *(Select Qt 6.x during installation)*
 
-- **Ollama** (running locally for the smart routing engine)
+* **Ollama** *(running locally for the smart routing engine)* ➔ [Download Ollama](https://ollama.com/download)
+  * *Windows:* `winget install Ollama.Ollama`
+  * *Linux/macOS:* `curl -fsSL https://ollama.com/install.sh | sh`
 
 
 ### 1. Backend Setup (Python)
