@@ -48,10 +48,14 @@
 
 * **Qt 6.x SDK** ➔ [Qt Online Installer](https://www.qt.io/download-open-source) *(Select Qt 6.x during installation)*
 
-* **Ollama** *(running locally for the smart routing engine)* ➔ [Download Ollama](https://ollama.com/download)
+* **Ollama** *(running locally for the smart routing engine)* ➔ [Download Ollama](https://ollama.com/download) | [Explore Models](https://ollama.com/library)
   * *Windows:* `winget install Ollama.Ollama`
   * *Linux/macOS:* `curl -fsSL https://ollama.com/install.sh | sh`
-
+  * **Model Selection:** The gateway is designed to be model-agnostic and works with *any* local model. Once Ollama is installed, you can pull your preferred model.
+    *(Recommended for smart local routing:)*
+    ```bash
+    ollama pull qwen2.5-coder
+    ```
 
 ### 1. Backend Setup (Python)
 
