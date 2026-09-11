@@ -31,41 +31,10 @@
 
 - **Multi-Provider Cloud & Local Support:** Seamlessly connects to major cloud APIs (**OpenAI, Anthropic, Gemini**) or runs entirely offline via **Ollama**.
 
-- **Modern Gemini-Style UI:** Features a sleek Qt-based dark/light mode interface, auto-resizing chat input, session history management stored securely via local SQLite encryption, and an **Incognito Mode**.
-
-
 ---
 
 
-##  For Users: Easy Installation
-
-
-If you want to use the application without dealing with source code or compilers:
-
-
-1. Navigate to the **[Releases](../../releases)** section on the right sidebar of the GitHub repository.
-
-2. Download the latest setup executable: `ZeroTrust_Setup_v1.0.exe`.
-
-3. Double-click the installer and follow the wizard instructions.
-
-4. Launch **Zero Trust AI Gateway** from your desktop or Start Menu and enter your API keys in the settings.
-
-
-> [!NOTE]
-
-> **Interactive Terminal During Setup:** During installation, an interactive terminal window might appear offering various AI agents (like Hermes, Cline, Qwen Code, etc.). You can press 'Enter' to install a model if you wish, or simply **close this window** to proceed. Zero Trust AI Gateway will automatically manage and download its required local models in the background.
-
-> Your local session history and API keys are stored securely inside your personal `AppData` directory, ensuring they persist safely across updates.
-
-
----
-
-
-##  For Developers: Running & Building from Source
-
-
-If you want to inspect the source code, make modifications, or build the application yourself, follow the structured steps below.
+## Running & Building from Source
 
 
 ### Prerequisites
