@@ -42,6 +42,9 @@
 * **Python 3.10+** ➔ [Download Official](https://www.python.org/downloads/) | Windows: `winget install Python.Python.3.11`
 
 * **C++ Compiler (MSVC / MinGW) & CMake** ➔ [MSVC Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) | [CMake](https://cmake.org/download/)
+  * *Windows:* `winget install Kitware.CMake`
+  * *macOS:* `brew install cmake`
+  * *Linux (Debian/Ubuntu):* `sudo apt install cmake`
 
 * **Qt 6.x SDK** ➔ [Qt Online Installer](https://www.qt.io/download-open-source) *(Select Qt 6.x during installation)*
 
