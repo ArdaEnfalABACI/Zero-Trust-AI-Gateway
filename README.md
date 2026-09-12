@@ -32,7 +32,6 @@ The system is designed as a **Portable Desktop Application**. Following these st
   * **Model Selection:** The gateway works with *any* local model. We highly recommend Qwen 2.5 Coder for local routing: 
     `ollama pull qwen2.5-coder`
 * **Cloud API Keys (Required):** The engine requires at least one active API key (OpenAI, Anthropic, or Gemini) You can securely enter your keys directly through the application's **Settings menu** once the interface is launched.
-
 ---
 
 ### 1. Offline AI Models Setup (Required)
