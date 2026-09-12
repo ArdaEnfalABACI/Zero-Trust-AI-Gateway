@@ -1,85 +1,70 @@
- #  Universal Zero Trust AI Gateway
-
+# Universal Zero Trust AI Gateway
 
 *A secure AI proxy router built with a modern C++ (Qt) frontend and a powerful Python (FastAPI) backend.*
 
-
 []()
-
 []()
-
 []()
-
 []()
-
-
-
 
 ---
 
-
-##  System Features
-
+## System Features
 
 - **Zero Trust Architecture:** Operates on a strict **"Fail-Closed"** security model. If any security check or local model verification fails, data is strictly prevented from leaving the local device.
-
 - **Smart Local Routing:** Automatically detects code or sensitive queries via Magika and local AI models (e.g., Qwen), forcing confidential information to stay within your local network.
-
 - **Deep Learning DLP Engine:** Equipped with Microsoft Presidio and HuggingFace Transformers to scan and protect Personally Identifiable Information (PII) like keys, tokens, emails, and financial data.
-
 - **Dynamic Hardware-Bound SSL:** Generates unique, self-signed cryptographic certificates on first launch for secure local communication between the C++ frontend and Python backend.
-
 - **Multi-Provider Cloud & Local Support:** Seamlessly connects to major cloud APIs (**OpenAI, Anthropic, Gemini**) or runs entirely offline via **Ollama**.
 
 ---
 
+## Building from Source & Packaging
 
-## Running & Building from Source
-
+The system is designed as a **Portable Desktop Application**. Following these steps will help you compile the source code into a standalone folder that requires zero installation for the end-user.
 
 ### Prerequisites
 
 * **Python 3.10+** ➔ [Download Official](https://www.python.org/downloads/) | Windows: `winget install Python.Python.3.11`
-
 * **C++ Compiler (MSVC / MinGW) & CMake** ➔ [MSVC Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) | [CMake](https://cmake.org/download/)
-  * *Windows:* `winget install Kitware.CMake`
-  * *macOS:* `brew install cmake`
-  * *Linux (Debian/Ubuntu):* `sudo apt install cmake`
-
 * **Qt 6.x SDK** ➔ [Qt Online Installer](https://www.qt.io/download-open-source) *(Select Qt 6.x during installation)*
+* **Ollama** *(running locally for the smart routing engine)* ➔ [Download Ollama](https://ollama.com/download)
+  * **Model Selection:** The gateway works with *any* local model. We highly recommend Qwen 2.5 Coder for local routing: 
+    `ollama pull qwen2.5-coder`
 
-* **Ollama** *(running locally for the smart routing engine)* ➔ [Download Ollama](https://ollama.com/download) | [Explore Models](https://ollama.com/library)
-  * *Windows:* `winget install Ollama.Ollama`
-  * *Linux/macOS:* `curl -fsSL https://ollama.com/install.sh | sh`
-  * **Model Selection:** The gateway is designed to be model-agnostic and works with *any* local model. Once Ollama is installed, you can pull your preferred model.
-    *(Recommended for smart local routing:)*
-    ` ollama pull qwen2.5-coder `
+---
 
-### 1. Backend Setup (Python)
+### 📥 1. Offline AI Models Setup (Required)
+To maintain a strict 100% Zero Trust offline environment and respect GitHub's file size limits, the heavy deep learning weights (~800MB) for the DLP engine are excluded from the source code.
 
-Open a terminal in the root project directory and execute:
+1. Go to the **[Releases](../../releases)** tab on the right side of this repository.
+2. Download the `models.zip` file from the latest release assets.
+3. Extract the `.zip` file. Keep this `models` folder ready; we will place it inside our compiled application in Step 4.
 
+---
+
+### 🐍 2. Backend Setup & Compilation (Python Virtual Environment)
+*Use your standard terminal (Command Prompt, PowerShell, or VS Code Terminal) for this section.*
 
 ```bash
+# 1. Navigate to the root directory of the project
+cd Zero-Trust-AI-Gateway
 
-# Create and activate virtual environment
-
+# 2. Create a virtual environment to keep dependencies isolated
 python -m venv venv
 
+# 3. Activate the virtual environment
+# On Windows:
 venv\Scripts\activate
+# On macOS/Linux:
+# source venv/bin/activate
 
-
-# Install required dependencies
-
+# 4. Install all required dependencies
 pip install -r requirements.txt
 
-
-# Package the backend using PyInstaller
-
-pyinstaller main.spec
-
-```
-
+# 5. Compile the backend engine into a portable executable
+# (This uses the main.spec file to embed necessary AI metadata securely)
+pyinstaller --clean main.spec
 
 ### 2. Frontend Setup (C++ / Qt & CMake)
 
