@@ -31,6 +31,7 @@ The system is designed as a **Portable Desktop Application**. Following these st
 * **Ollama** *(running locally for the smart routing engine)* ➔ [Download Ollama](https://ollama.com/download)
   * **Model Selection:** The gateway works with *any* local model. We highly recommend Qwen 2.5 Coder for local routing: 
     `ollama pull qwen2.5-coder`
+* **Cloud API Keys (Optional):** Required only if you intend to route traffic to cloud providers (OpenAI, Anthropic, Gemini). You will need to provide your API keys within a `.env` file in the root directory.
 
 ---
 
