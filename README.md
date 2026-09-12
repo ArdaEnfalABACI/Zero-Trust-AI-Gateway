@@ -136,30 +136,6 @@ ZeroTrust_Gateway/
                     ├── bert-base-NER/
                     └── bert-base-turkish-ner/
 ```
-### 3. Running the Integrated System
-
-After building both components, manually structure your release directory as follows:
-
-1. Create a folder named `ZeroTrust_Release` (or any release folder you prefer).
-
-2. Copy the built C++ frontend (`ZeroTrustAI.exe`) directly into this root release folder.
-
-3. Inside this release folder, create a subfolder named `backend_engine`.
-
-4. Copy the compiled backend executable (`main.exe`) and its `_internal` folder from `dist/main/` into the `backend_engine` subfolder.
-
-Your final directory structure must look like this:
-
-```
-ZeroTrust_Release/
-├── ZeroTrustAI.exe
-└── backend_engine/
-    ├── main.exe
-    └── _internal/
-```
-
-5. Run `ZeroTrustAI.exe` to spin up the secure gateway launcher and the Python backend simultaneously.
-
 ---
 
 Built with strict security and local privacy by default.
