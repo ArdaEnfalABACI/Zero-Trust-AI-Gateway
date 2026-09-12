@@ -34,7 +34,7 @@ The system is designed as a **Portable Desktop Application**. Following these st
 
 ---
 
-### 📥 1. Offline AI Models Setup (Required)
+### 1. Offline AI Models Setup (Required)
 To maintain a strict 100% Zero Trust offline environment and respect GitHub's file size limits, the heavy deep learning weights are excluded from the source code. **You must download both language models for the engine to initialize properly.**
 
 1. Go to the **[Releases](../../releases)** tab on the right side of this repository.
@@ -43,7 +43,7 @@ To maintain a strict 100% Zero Trust offline environment and respect GitHub's fi
 4. Create a new folder named `models` and place both extracted folders (`bert-base-NER` and `bert-base-turkish-ner`) directly inside it. Keep this `models` folder ready; we will place it inside our compiled application in Step 4.
 ---
 
-### 🐍 2. Backend Setup & Compilation (Python Virtual Environment)
+### 2. Backend Setup & Compilation (Python Virtual Environment)
 *Use your standard terminal (Command Prompt, PowerShell, or VS Code Terminal) for this section.*
 
 ```bash
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 pyinstaller --clean main.spec
 ```
 
-### 🖥️ 3. Frontend Setup (Qt Command Prompt & CMake)
+### 3. Frontend Setup (Qt Command Prompt & CMake)
 
 *Use **Qt Command Prompt** from your Windows Start Menu.*
 
@@ -92,7 +92,7 @@ cmake --build . --config Release
 windeployqt ZeroTrustAI.exe
 ```
 
-### 📦 4. Assembling the Portable Application & Running
+### 4. Assembling the Portable Application & Running
 
 Now we bring the C++ frontend, the Python backend, and the offline AI models together into one seamless, portable folder.
 
