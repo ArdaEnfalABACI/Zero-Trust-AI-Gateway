@@ -28,3 +28,5 @@ backend/core/models/
 Zero Trust/
 ZeroTrust_Gateway/
 backend_engine/
+
+.vscode/
