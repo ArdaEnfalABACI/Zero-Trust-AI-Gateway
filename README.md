@@ -35,12 +35,12 @@ The system is designed as a **Portable Desktop Application**. Following these st
 ---
 
 ### 📥 1. Offline AI Models Setup (Required)
-To maintain a strict 100% Zero Trust offline environment and respect GitHub's file size limits, the heavy deep learning weights (~800MB) for the DLP engine are excluded from the source code.
+To maintain a strict 100% Zero Trust offline environment and respect GitHub's file size limits, the heavy deep learning weights are excluded from the source code. **You must download both language models for the engine to initialize properly.**
 
 1. Go to the **[Releases](../../releases)** tab on the right side of this repository.
-2. Download the `models.zip` file from the latest release assets.
-3. Extract the `.zip` file. Keep this `models` folder ready; we will place it inside our compiled application in Step 4.
-
+2. Download both **`models_en.zip`** and **`models_tr.zip`** from the latest release assets.
+3. Extract both `.zip` files. 
+4. Create a new folder named `models` and place both extracted folders (`bert-base-NER` and `bert-base-turkish-ner`) directly inside it. Keep this `models` folder ready; we will place it inside our compiled application in Step 4.
 ---
 
 ### 🐍 2. Backend Setup & Compilation (Python Virtual Environment)
