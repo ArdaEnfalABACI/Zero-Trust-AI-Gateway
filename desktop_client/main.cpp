@@ -441,7 +441,7 @@ int main(int argc, char *argv[]) {
                 aiLayout->setContentsMargins(0, 0, 0, 0);
                 aiLayout->setSpacing(8);
                 
-                QLabel *header = new QLabel(QString("<b style='color:%1; font-size: 16px;'>✨ AI Assistant </b><span style='color:#71717a; font-size:12px;'>(%2)</span>").arg(aiNameColor, msg.modelInfo));
+                QLabel *header = new QLabel(QString("<b style='color:%1; font-size: 16px;'>AI Assistant </b><span style='color:#71717a; font-size:12px;'>(%2)</span>").arg(aiNameColor, msg.modelInfo));
                 
                 QLabel *body = new QLabel(msg.content.toHtmlEscaped().replace("\n", "<br>"));
                 body->setWordWrap(true);
@@ -476,7 +476,7 @@ int main(int argc, char *argv[]) {
         sessionList->clear();
         QSqlQuery query("SELECT id, title FROM sessions ORDER BY id DESC");
         while (query.next()) {
-            QListWidgetItem *item = new QListWidgetItem("💬 " + secureObfuscate(query.value(1).toString(), false));
+            QListWidgetItem *item = new QListWidgetItem(" " + secureObfuscate(query.value(1).toString(), false));
             item->setData(Qt::UserRole, query.value(0).toInt());
             sessionList->addItem(item);
         }

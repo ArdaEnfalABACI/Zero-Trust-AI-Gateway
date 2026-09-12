@@ -24,6 +24,9 @@ from typing import List
 from fastapi import FastAPI, HTTPException, Request, Header
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
+import subprocess
+import urllib.request
+
 
 from litellm import completion
 from magika import Magika 
@@ -145,7 +148,7 @@ async def process_chat(request: ChatRequest, x_api_key: str = Header(None), x_pr
     safe_text = await asyncio.to_thread(sanitize_prompt, original_text)
     
     print("\n" + "="*60)
-    print("🛡️ ZERO TRUST DLP SCAN REPORT 🛡️")
+    print("ZERO TRUST DLP SCAN REPORT ")
     print("="*60)
     print(f"🔴 ORIGINAL PROMPT  : {original_text}")
     print(f"🟢 SANITIZED PROMPT : {safe_text}")
@@ -183,6 +186,19 @@ async def process_chat(request: ChatRequest, x_api_key: str = Header(None), x_pr
         "llm_response": actual_llm_response
     }
 
+def ensure_ollama_running():
+    print("[SYSTEM] Verifying local AI engine (Ollama) status...")
+    try:
+        urllib.request.urlopen("http://127.0.0.1:11434/", timeout=1)
+        print("[SYSTEM] ✅ Ollama is already running.")
+    except Exception:
+        print("[SYSTEM] ⚠️ Ollama is not running. Attempting to start it in the background...")
+        try:
+            subprocess.Popen(["ollama", "serve"], creationflags=0x08000000)
+            time.sleep(3)
+            print("[SYSTEM] ✅ Ollama started successfully.")
+        except FileNotFoundError:
+            print("[SYSTEM] ❌ CRITICAL ERROR: Ollama is not installed on this system!")
 
 if __name__ == "__main__":
     import uvicorn
@@ -190,12 +206,14 @@ if __name__ == "__main__":
     import os
 
     if not os.path.exists("server.key") or not os.path.exists("server.crt"):
-        print("[SYSTEM] 🔐 Generating unique hardware-bound SSL certificates...")
+        print("[SYSTEM] Generating unique hardware-bound SSL certificates...")
         ca = trustme.CA()
         server_cert = ca.issue_cert("127.0.0.1", "localhost")
         server_cert.private_key_pem.write_to_path("server.key")
         server_cert.cert_chain_pems[0].write_to_path("server.crt")
         print("[SYSTEM] ✅ Unique SSL certificates generated successfully.")
 
-    print("[SYSTEM] 🚀 Starting Universal Zero Trust Gateway...")
+    ensure_ollama_running()
+
+    print("[SYSTEM] Starting Universal Zero Trust Gateway...")
     uvicorn.run(app, host="127.0.0.1", port=8000, ssl_keyfile="server.key", ssl_certfile="server.crt")

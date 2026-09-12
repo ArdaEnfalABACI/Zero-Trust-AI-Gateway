@@ -20,3 +20,11 @@ desktop_client/CMakeFiles/
 ZeroTrust_Release/
 Output/
 *.exe
+
+# Heavy AI Models (Distributed via GitHub Releases)
+backend/core/models/
+
+# Portable Release Folders
+Zero Trust/
+ZeroTrust_Gateway/
+backend_engine/
