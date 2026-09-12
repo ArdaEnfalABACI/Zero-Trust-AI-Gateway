@@ -65,24 +65,30 @@ pip install -r requirements.txt
 # 5. Compile the backend engine into a portable executable
 # (This uses the main.spec file to embed necessary AI metadata securely)
 pyinstaller --clean main.spec
-
-### 2. Frontend Setup (C++ / Qt & CMake)
-
-Navigate to the client directory and compile the C++ application:
-
-
-```bash
-
-cd desktop_client
-
-mkdir build && cd build
-
-cmake ..
-
-cmake --build . --config Release
-
 ```
 
+### 🖥️ 3. Frontend Setup (Qt Command Prompt & CMake)
+
+*Use **Qt Command Prompt** from your Windows Start Menu.*
+
+```bash
+# 1. Navigate to the root directory of the project
+cd Zero-Trust-AI-Gateway
+
+# 2. Move into the frontend folder 
+cd desktop_client
+
+# 3. Create a build directory and step into it
+mkdir build
+cd build
+
+# 4. Configure the project
+cmake ..
+
+# 5. Compile the project in Release mode
+cmake --build . --config Release
+
+Once the build is successfully completed, locate the compiled executable (typically generated inside a `Release` subfolder) and run `windeployqt Release\ZeroTrustAI.exe` to automatically pull and copy all the necessary Qt DLL files right next to your executable.
 
 ### 3. Running the Integrated System
 
