@@ -88,27 +88,6 @@ cmake ..
 # 5. Compile the project in Release mode
 cmake --build . --config Release
 
-### 🖥️ 3. Frontend Setup (Qt Command Prompt & CMake)
-
-*Use **Qt Command Prompt** from your Windows Start Menu.*
-
-```bash
-# 1. Navigate to the root directory of the project
-cd Zero-Trust-AI-Gateway
-
-# 2. Move into the frontend folder 
-cd desktop_client
-
-# 3. Create a build directory and step into it
-mkdir build
-cd build
-
-# 4. Configure the project
-cmake ..
-
-# 5. Compile the project in Release mode
-cmake --build . --config Release
-
 # 6. Make the application portable by pulling all required Qt DLLs
 windeployqt ZeroTrustAI.exe
 ```
