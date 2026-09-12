@@ -441,7 +441,11 @@ int main(int argc, char *argv[]) {
                 aiLayout->setContentsMargins(0, 0, 0, 0);
                 aiLayout->setSpacing(8);
                 
+<<<<<<< HEAD
                 QLabel *header = new QLabel(QString("<b style='color:%1; font-size: 16px;'>AI Assistant </b><span style='color:#71717a; font-size:12px;'>(%2)</span>").arg(aiNameColor, msg.modelInfo));
+=======
+                QLabel *header = new QLabel(QString("<b style='color:%1; font-size: 16px;'> AI Assistant </b><span style='color:#71717a; font-size:12px;'>(%2)</span>").arg(aiNameColor, msg.modelInfo));
+>>>>>>> 0617fffb2ffe89227b5e2e83ad30f878da6bd2c9
                 
                 QLabel *body = new QLabel(msg.content.toHtmlEscaped().replace("\n", "<br>"));
                 body->setWordWrap(true);
@@ -455,7 +459,7 @@ int main(int argc, char *argv[]) {
                 rowLayout->addStretch(); 
             }
             else if (msg.type == ChatMessage::Error) {
-                QLabel *errLbl = new QLabel(QString("🚨 Gateway Error:<br>%1").arg(msg.content.toHtmlEscaped()));
+                QLabel *errLbl = new QLabel(QString(" Gateway Error:<br>%1").arg(msg.content.toHtmlEscaped()));
                 errLbl->setWordWrap(true);
                 errLbl->setStyleSheet("background-color: rgba(239, 68, 68, 0.1); color: #EF4444; padding: 15px; border-left: 4px solid #EF4444; border-radius: 8px; font-size: 14px;");
                 rowLayout->addWidget(errLbl);
